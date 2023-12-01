@@ -11,12 +11,16 @@ const context = createContext();
 
 function App() {
   const matches = useMediaQuery('(max-width:1024px)')
-  const [isShortList, setShortList] = useState(false)
+
+
   const width = matches?'100vw':'450px'
   const border = matches?null:'1px solid black'
   const borderRadius = matches?null:'5px'
   const margin = matches?null:'auto'
   const box_height = matches?'80%':'75.5%'
+
+
+  const [isShortList, setShortList] = useState(false)
   const [data, setData] = useState([])
 
   const fetch_data = async()=>{
@@ -28,6 +32,8 @@ function App() {
   useEffect(()=>{
     fetch_data()
   }, [])
+
+  
   return (
       <Box
       sx={{
